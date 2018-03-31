@@ -1,40 +1,151 @@
 module.exports = function () {
     return {
-        base111: {
-            name: 'Kiria',
-            routers: 
-            [
-                {
-                    name: 'D1',
-                    address: '127.0.0.1',
-                    serials: 
+        bases: [
+            {
+                index: 0,
+                name: 'קריה',
+                number: '111',
+                routers:
                     [
                         {
-                            name: 'se0',
-                            isActive: true
+                            index:0,
+                            name: 'D1',
+                            address: '127.0.0.1',
+                            serials:
+                                [
+                                    {
+                                        index:0,
+                                        name: 'se0',
+                                        description: "site C",
+                                        isActive: true
+                                    },
+                                    {
+                                        index:1,
+                                        name: 'se1',
+                                        description: "site D",
+                                        isActive: true
+                                    },
+                                    {
+                                        index:2,
+                                        name: 'se2',
+                                        description: "site A",
+                                        isActive: true
+                                    },
+                                    {
+                                        index:3,
+                                        name: 'se3',
+                                        description: "site B",
+                                        isActive: true
+                                    },//another serial start here//another serial start here
+                                ]
                         },
                         {
-                            name: 'se1',
-                            isActive: true
-                        }
+                            index:1,
+                            name: 'D2',
+                            address: '127.0.0.1',
+                            serials:
+                                [
+                                    {
+                                        index:0,
+                                        name: 'se0',
+                                        description: "site C",
+                                        isActive: true
+                                    },
+                                    {
+                                        index:1,
+                                        name: 'se1',
+                                        description: "site D",
+                                        isActive: true
+                                    },
+                                    {
+                                        index:2,
+                                        name: 'se2',
+                                        description: "site A",
+                                        isActive: true
+                                    },
+                                    {
+                                        index:3,
+                                        name: 'se3',
+                                        description: "site B",
+                                        isActive: true
+                                    },//another serial start here//another serial start here
+                                ]
+                        },//another router start here
                     ]
                 },
                 {
-                    name: 'D2',
-                    address: '127.0.0.1',
-                    serials:
-                    [
-                        {
-                            name: 'se0',
-                            isActive: true
-                        },
-                        {
-                            name: 'se1',
-                            isActive: true
-                        }
-                    ]
-                }
-            ]
-        }
+                    index: 1,
+                    name: 'חצרים',
+                    number: '6',
+                    routers:
+                        [
+                            {
+                                index:0,
+                                name: 'D3',
+                                address: '127.0.0.1',
+                                serials:
+                                    [
+                                        {
+                                            index:0,
+                                            name: 'se0',
+                                            description: "site A",
+                                            isActive: true
+                                        },
+                                        {
+                                            index:1,
+                                            name: 'se1',
+                                            description: "site B",
+                                            isActive: true
+                                        },
+                                        {
+                                            index:2,
+                                            name: 'se2',
+                                            description: "site A",
+                                            isActive: true
+                                        },
+                                        {
+                                            index:3,
+                                            name: 'se3',
+                                            description: "site B",
+                                            isActive: true
+                                        },
+                                        //another serial start here
+                                    ]
+                            },
+                            {
+                                index:1,
+                                name: 'D4',
+                                address: '127.0.0.1',
+                                serials:
+                                    [
+                                        {
+                                            index:0,
+                                            name: 'se0',
+                                            description: "site C",
+                                            isActive: true
+                                        },
+                                        {
+                                            index:1,
+                                            name: 'se1',
+                                            description: "site D",
+                                            isActive: true
+                                        },
+                                        {
+                                            index:2,
+                                            name: 'se2',
+                                            description: "site A",
+                                            isActive: true
+                                        },
+                                        {
+                                            index:3,
+                                            name: 'se3',
+                                            description: "site B",
+                                            isActive: true
+                                        },//another serial start here//another serial start here
+                                    ]
+                            },//another router start here
+                        ]
+                    }//another base start here
+        ], 
     }
 }

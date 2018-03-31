@@ -1,0 +1,55 @@
+<div class="headers">
+  <div class="title">
+      <h1>LooPortal</h1>
+  </div>
+</div>
+
+
+<div class="body">
+
+
+
+  <mat-horizontal-stepper [linear]="true" #stepper="matHorizontalStepper">
+    <mat-step [stepControl]="baseFormGroup">
+      <form [formGroup]="baseFormGroup">
+        <ng-template matStepLabel>Fill out your name</ng-template>
+        <mat-form-field >
+          <input matInput placeholder="Last name, First name"  required>
+        </mat-form-field>
+        <div>
+          <button mat-button matStepperNext>Next</button>
+        </div>
+      </form>
+    </mat-step>
+    <mat-step [stepControl]="routerFormGroup">
+      <form [formGroup]="routerFormGroup">
+        <ng-template matStepLabel>Fill out your address</ng-template>
+        <mat-form-field>
+          <input matInput placeholder="Address" formControlName="routerCtrl" required>
+        </mat-form-field>
+        <div>
+          <button mat-button matStepperPrevious>Back</button>
+          <button mat-button matStepperNext>Next</button>
+        </div>
+      </form>
+    </mat-step>
+    <mat-step>
+      <ng-template matStepLabel>Done</ng-template>
+      You are now done.
+      <div>
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-button (click)="stepper.reset()">Reset</button>
+      </div>
+    </mat-step>
+  </mat-horizontal-stepper>
+
+
+</div>
+
+<div class="footer">
+  <div class="credits">
+    <p>
+      created by Ron Gorlik April 2018
+  </p>
+</div>
+</div>

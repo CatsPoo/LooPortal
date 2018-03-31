@@ -1,6 +1,6 @@
 import { AppPage } from './app.po';
 
-describe('shift-online App', () => {
+describe('loop-portal App', () => {
   let page: AppPage;
 
   beforeEach(() => {

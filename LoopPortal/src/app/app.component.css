@@ -1,0 +1,48 @@
+
+.headers{
+    text-align: center;
+    background: #3f51b5;
+    color: #fff;
+    font-family: 'Roboto','Helvetica Neue',sans-serif;
+    height: 300%;
+}
+
+.title{
+    font-size: 20px;
+}
+
+.body{
+    direction: rtl;
+    -webkit-locale: "he";
+    height: 150%;
+    font-size: 20px;
+}
+
+
+.bases_area, .routers_area{
+    width: 50%;
+    text-align: center;
+    float: right;
+}
+
+.radio-group {
+    display: inline-flex;
+    flex-direction: column;
+  }
+
+.radio-button{
+    margin-bottom: 20%;
+}
+
+.serials-radio-group{
+    text-align: center;
+    float: right;
+    width: 100%;;
+}
+.serial-radio-button{
+    text-align:center;
+    width: 10%;
+}
+  ul{
+      list-style: none;
+  }
