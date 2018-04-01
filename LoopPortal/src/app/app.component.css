@@ -43,6 +43,18 @@
     text-align:center;
     width: 10%;
 }
-  ul{
-      list-style: none;
-  }
+
+.stepper{
+    direction: ltr;
+}
+.row{
+    direction: ltr;
+}
+.col{
+    width: 50%;
+    float: left;
+}
+
+p{
+    direction: rtl;
+}

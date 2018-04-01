@@ -9,7 +9,7 @@
 
 
 
-  <mat-horizontal-stepper [linear]="false" #stepper="matHorizontalStepper">
+  <mat-horizontal-stepper #stepper [linear]="false" #stepper="matHorizontalStepper" class="stepper">
     <mat-step [stepControl]="baseFormGroup">
       <form [formGroup]="baseFormGroup">
         <ng-template matStepLabel>בחר בסיס</ng-template>
@@ -44,15 +44,29 @@
     <mat-step [stepControl]="serialsFormGroup">
       <form [formGroup]="serialsFormGroup">
         <ng-template matStepLabel>בחר סיריאל</ng-template>
-
-        <mat-radio-group class="radio-group" value={{this.currentSerialIndex}} (change)="serialChanged($event)">
-          <mat-radio-button class="radio-button" *ngFor="let serial of this.data.bases[this.currentBaseIndex].routers[this.currentRouterIndex].serials"  value="{{serial.index}}">
-            {{serial.name}} - {{serial.description}}
-          </mat-radio-button>
-        </mat-radio-group>
-
-        <div>
-          <button mat-button matStepperPrevious>הקודם</button>
+        <div class="row">
+          <div class=col>
+            <mat-radio-group class="radio-group" value={{this.currentSerialIndex}} (change)="serialChanged($event)">
+              <mat-radio-button class="radio-button" *ngFor="let serial of this.data.bases[this.currentBaseIndex].routers[this.currentRouterIndex].serials"
+                value="{{serial.index}}">
+                {{serial.name}} - {{serial.description}}
+              </mat-radio-button>
+            </mat-radio-group>
+            <div>
+              <button mat-button matStepperPrevious>הקודם</button>
+            </div>
+          </div>
+          <div class=col>
+            <button mat-button (click)="checkLoop($event)">
+              <p>
+                בדיקת לופ על:
+                <br> 
+                {{this.data.bases[this.currentBaseIndex].name}} >
+                {{this.data.bases[this.currentBaseIndex].routers[currentRouterIndex].serials[this.currentSerialIndex].name}} <
+                 {{this.data.bases[this.currentBaseIndex].routers[currentRouterIndex].name}} 
+              </p>
+            </button>
+          </div>
         </div>
       </form>
     </mat-step>
@@ -61,10 +75,10 @@
 
 </div>
 
-<div class="footer">
+<!-- <div class="footer">
   <div class="credits">
     <p>
       created by Ron Gorlik April 2018
     </p>
   </div>
-</div>
+</div> -->

@@ -19,14 +19,14 @@ import { ReactiveFormsModule } from '@angular/forms';
     MatButtonModule, 
     MatCheckboxModule,
     BrowserAnimationsModule,
-    NoopAnimationsModule,
     MatToolbarModule,
     MatRadioModule,
     HttpModule,
     MatStepperModule,
     MatFormFieldModule,
     ReactiveFormsModule,
-    MatInputModule
+    MatInputModule,
+    MatButtonModule
   ],
   providers: [
     ConnectionService,
