@@ -68,8 +68,17 @@ export class AppComponent implements OnInit {
     this.currentSerialIndex=ev.value; 
   }
 
-  stepChange(e){
-    console.log(e.value);
+  baseNavClick(e){
+    this.baseStepTitle=this.data.bases[this.currentBaseIndex].name;
+  }
+
+  routerNavClick(e){
+    if(e.srcElement.classList[0]=="routerNext"){
+      this.routerStepTitle=this.data.bases[this.currentBaseIndex].routers[this.currentRouterIndex].name;
+    }
+    else{
+      this.routerStepTitle="בחר/י נתב";
+    }
   }
 
   checkLoop(ev){

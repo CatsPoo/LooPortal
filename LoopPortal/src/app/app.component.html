@@ -9,7 +9,7 @@
 
 
 
-  <mat-horizontal-stepper #stepper [linear]="false" #stepper="matHorizontalStepper" class="stepper" (change)="stepChange($event)">
+  <mat-horizontal-stepper #stepper [linear]="false" #stepper="matHorizontalStepper" class="stepper">
     <mat-step [stepControl]="baseFormGroup">
       <form [formGroup]="baseFormGroup">
         <ng-template matStepLabel>{{this.baseStepTitle}}</ng-template>
@@ -21,7 +21,7 @@
         </mat-radio-group>
 
         <div>
-          <button mat-button matStepperNext>הבא</button>
+          <button mat-button matStepperNext (click)="baseNavClick($event)">הבא</button>
         </div>
       </form>
     </mat-step>
@@ -37,8 +37,8 @@
         </mat-radio-group>
 
         <div>
-          <button mat-button matStepperPrevious>הקודם</button>
-          <button mat-button matStepperNext>הבא</button>
+          <button class=routerPrev mat-button matStepperPrevious (click)="routerNavClick($event)">הקודם</button>
+          <button class=routerNext mat-button matStepperNext (click)="routerNavClick($event)">הבא</button>
         </div>
       </form>
     </mat-step>
