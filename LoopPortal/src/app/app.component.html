@@ -9,10 +9,10 @@
 
 
 
-  <mat-horizontal-stepper #stepper [linear]="false" #stepper="matHorizontalStepper" class="stepper">
+  <mat-horizontal-stepper #stepper [linear]="false" #stepper="matHorizontalStepper" class="stepper" (change)="stepChange($event)">
     <mat-step [stepControl]="baseFormGroup">
       <form [formGroup]="baseFormGroup">
-        <ng-template matStepLabel>בחר בסיס</ng-template>
+        <ng-template matStepLabel>{{this.baseStepTitle}}</ng-template>
 
         <mat-radio-group class="radio-group" value={{this.currentBaseIndex}} (change)="baseChanged($event)">
           <mat-radio-button class="radio-button" *ngFor="let base of this.data.bases" value="{{base.index}}">
@@ -27,7 +27,8 @@
     </mat-step>
     <mat-step [stepControl]="routerFormGroup">
       <form [formGroup]="routerFormGroup">
-        <ng-template matStepLabel>בחר נתב</ng-template>
+        
+        <ng-template matStepLabel>{{this.routerStepTitle}}</ng-template>
 
         <mat-radio-group class="radio-group" value={{this.currentRouterIndex}} (change)="routerChanged($event)">
           <mat-radio-button class="radio-button" *ngFor="let router of this.data.bases[this.currentBaseIndex].routers" value="{{router.index}}">
@@ -75,10 +76,10 @@
 
 </div>
 
-<!-- <div class="footer">
+ <div class="footer">
   <div class="credits">
     <p>
       created by Ron Gorlik April 2018
     </p>
   </div>
-</div> -->
+</div>

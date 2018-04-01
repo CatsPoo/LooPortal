@@ -15,14 +15,17 @@ export class AppComponent implements OnInit {
 
   @ViewChild('stepper') stepper: MatHorizontalStepper;
 
-  private currentBaseIndex=0;
- private currentRouterIndex=0;
-  private currentSerialIndex=0;
+  private currentBaseIndex = 0;
+  private currentRouterIndex = 0;
+  private currentSerialIndex = 0;
 
+  private baseStepTitle="בחר/י בסיס";
+  private routerStepTitle="בחר/י נתב";
 
-  baseFormGroup: FormGroup;
-  routerFormGroup: FormGroup;
-  serialsFormGroup:FormGroup;
+  private baseFormGroup: FormGroup;
+  private routerFormGroup: FormGroup;
+  private serialsFormGroup: FormGroup;
+
 
 
   constructor(private connection: ConnectionService, private data: AppDataService, private _formBuilder: FormBuilder) {
@@ -50,6 +53,7 @@ export class AppComponent implements OnInit {
     this.currentSerialIndex=0;
 
     this.stepper.next(); //move to next step
+    this.baseStepTitle=this.data.bases[this.currentBaseIndex].name;
   
   }
 
@@ -58,9 +62,14 @@ export class AppComponent implements OnInit {
     this.currentSerialIndex=0;
 
     this.stepper.next(); //move to next step
+    this.routerStepTitle=this.data.bases[this.currentBaseIndex].routers[this.currentRouterIndex].name
   }
   serialChanged(ev){
     this.currentSerialIndex=ev.value; 
+  }
+
+  stepChange(e){
+    console.log(e.value);
   }
 
   checkLoop(ev){

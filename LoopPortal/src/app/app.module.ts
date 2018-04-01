@@ -18,6 +18,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     BrowserModule,
     MatButtonModule, 
     MatCheckboxModule,
+    NoopAnimationsModule,
     BrowserAnimationsModule,
     MatToolbarModule,
     MatRadioModule,
@@ -26,7 +27,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     MatFormFieldModule,
     ReactiveFormsModule,
     MatInputModule,
-    MatButtonModule
+    MatButtonModule,
   ],
   providers: [
     ConnectionService,

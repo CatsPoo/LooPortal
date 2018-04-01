@@ -3,7 +3,7 @@ module.exports = function () {
         bases: [
             {
                 index: 0,
-                name: 'קריה',
+                name: 'בסיס א',
                 number: '111',
                 routers:
                     [
@@ -75,7 +75,7 @@ module.exports = function () {
                 },
                 {
                     index: 1,
-                    name: 'חצרים',
+                    name: 'בסיס ב',
                     number: '6',
                     routers:
                         [
