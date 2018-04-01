@@ -10,7 +10,6 @@ import { ConnectionService } from '../services/connection-service/connection.ser
 
 import { ReactiveFormsModule } from '@angular/forms';
 
-
 @NgModule({
   declarations: [
     AppComponent

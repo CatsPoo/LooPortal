@@ -4,6 +4,7 @@ import { ConnectionService } from './../services/connection-service/connection.s
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -18,20 +19,24 @@ export class AppComponent implements OnInit {
 
   baseFormGroup: FormGroup;
   routerFormGroup: FormGroup;
+  serialsFormGroup:FormGroup;
 
 
   constructor(private connection: ConnectionService, private data: AppDataService, private _formBuilder: FormBuilder) {
+    this.data.init(callback => {
+    });
   }
 
   ngOnInit() {
-    this.data.init(callback => {
-    });
 
     this.baseFormGroup = this._formBuilder.group({
-      baseCtrl: ['']
+      baseCtrl: ['',Validators.required]
     });
     this.routerFormGroup = this._formBuilder.group({
       routerCtrl: ['', Validators.required]
+    });
+    this.serialsFormGroup = this._formBuilder.group({
+      serialsCtrl: ['', Validators.required]
     });
 
   }
@@ -43,7 +48,6 @@ export class AppComponent implements OnInit {
   }
 
   routerChanged(ev){
-    console.log(ev.value);
     this.currentRouterIndex=ev.value;
     this.currentSerialIndex=0;
   }

@@ -27,7 +27,7 @@ export class AppDataService {
            
           let tempRouter=new Router(router.index,router.name,router.address); //converts to res to router
           router.serials.forEach(serial => {           
-            let tempSerial=new Serial(serial.index,serial.name,serial.isActive,serial.decription); //convers res to serial
+            let tempSerial=new Serial(serial.index,serial.name,serial.isActive,serial.description); //convers res to serial
             tempRouter.addSerial(tempSerial); //insert the serial to the routerws serials list
            });
            tempBase.addrouter(tempRouter); //insert the routers with the serials to base
@@ -45,7 +45,7 @@ export class Serial{
   get index(){return this._index;}
   get name(){return this._name;}
   get isActive(){return this.isActive;}
-  get description(){return this.description;}
+  get description(){return this._description;}
 }
 
 export class Router{

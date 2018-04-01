@@ -1,6 +1,6 @@
 <div class="headers">
   <div class="title">
-      <h1>LooPortal</h1>
+    <h1>LooPortal</h1>
   </div>
 </div>
 
@@ -9,37 +9,52 @@
 
 
 
-  <mat-horizontal-stepper [linear]="true" #stepper="matHorizontalStepper">
+  <mat-horizontal-stepper [linear]="false" #stepper="matHorizontalStepper">
     <mat-step [stepControl]="baseFormGroup">
       <form [formGroup]="baseFormGroup">
-        <ng-template matStepLabel>Fill out your name</ng-template>
-        <mat-form-field >
-          <input matInput placeholder="Last name, First name"  required>
-        </mat-form-field>
+        <ng-template matStepLabel>בחר בסיס</ng-template>
+
+        <mat-radio-group class="radio-group" value={{this.currentBaseIndex}} (change)="baseChanged($event)">
+          <mat-radio-button class="radio-button" *ngFor="let base of this.data.bases" value="{{base.index}}">
+            {{base.name}} - {{base.number}}
+          </mat-radio-button>
+        </mat-radio-group>
+
         <div>
-          <button mat-button matStepperNext>Next</button>
+          <button mat-button matStepperNext>הבא</button>
         </div>
       </form>
     </mat-step>
     <mat-step [stepControl]="routerFormGroup">
       <form [formGroup]="routerFormGroup">
-        <ng-template matStepLabel>Fill out your address</ng-template>
-        <mat-form-field>
-          <input matInput placeholder="Address" formControlName="routerCtrl" required>
-        </mat-form-field>
+        <ng-template matStepLabel>בחר נתב</ng-template>
+
+        <mat-radio-group class="radio-group" value={{this.currentRouterIndex}} (change)="routerChanged($event)">
+          <mat-radio-button class="radio-button" *ngFor="let router of this.data.bases[this.currentBaseIndex].routers" value="{{router.index}}">
+            {{router.name}} - {{router.address}}
+          </mat-radio-button>
+        </mat-radio-group>
+
         <div>
-          <button mat-button matStepperPrevious>Back</button>
-          <button mat-button matStepperNext>Next</button>
+          <button mat-button matStepperPrevious>הקודם</button>
+          <button mat-button matStepperNext>הבא</button>
         </div>
       </form>
     </mat-step>
-    <mat-step>
-      <ng-template matStepLabel>Done</ng-template>
-      You are now done.
-      <div>
-        <button mat-button matStepperPrevious>Back</button>
-        <button mat-button (click)="stepper.reset()">Reset</button>
-      </div>
+    <mat-step [stepControl]="serialsFormGroup">
+      <form [formGroup]="serialsFormGroup">
+        <ng-template matStepLabel>בחר סיריאל</ng-template>
+
+        <mat-radio-group class="radio-group" value={{this.currentSerialIndex}} (change)="serialChanged($event)">
+          <mat-radio-button class="radio-button" *ngFor="let serial of this.data.bases[this.currentBaseIndex].routers[this.currentRouterIndex].serials"  value="{{serial.index}}">
+            {{serial.name}} - {{serial.description}}
+          </mat-radio-button>
+        </mat-radio-group>
+
+        <div>
+          <button mat-button matStepperPrevious>הקודם</button>
+        </div>
+      </form>
     </mat-step>
   </mat-horizontal-stepper>
 
@@ -50,6 +65,6 @@
   <div class="credits">
     <p>
       created by Ron Gorlik April 2018
-  </p>
-</div>
+    </p>
+  </div>
 </div>
