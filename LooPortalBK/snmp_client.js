@@ -14,7 +14,6 @@ module.exports = {
                     }
                     else
                     {
-                        console.log("aaa")
                         console.log(varbinds[0].oid + " = " + varbinds[0].value); //print the result
                         callback(varbinds[0].value);
                     }

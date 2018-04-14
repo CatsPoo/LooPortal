@@ -1,21 +1,40 @@
 
-.headers{
+.header{
     text-align: left;
     background: #3f51b5;
     color: #fff;
     font-family: 'Roboto','Helvetica Neue',sans-serif;
-    height: 300%;
+    width: 100%;
+    margin: 0 0;
+    height: 90px;
+    float: left; 
+    padding: 0
 }
 
 .title{
     font-size: 20px;
+    width: 50%;
+    height: 50%;
+    margin-left: 5%;
+    margin-top: 1.5%;
+    float: left;
+    padding: 0;
+    
 }
 
-.body{
+.title-text{
+
+    margin: 0 0;
+}
+
+.main{
+    padding-top: 6%;
     direction: rtl;
     -webkit-locale: "he";
     height: 150%;
     font-size: 20px;
+    background-color: inherit;
+    
 }
 
 
@@ -46,6 +65,7 @@
 
 .stepper{
     direction: ltr;
+    background-color: inherit;
 }
 .row{
     direction: ltr;
@@ -57,4 +77,13 @@
 
 p{
     direction: rtl;
+}
+
+.footer{
+    position:fixed;
+    width:50%;
+    height:60px;
+    margin-left:-5%;
+    bottom:0px;
+    left:50%;
 }

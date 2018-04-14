@@ -15,4 +15,10 @@ router.post('/getData', function(req, res, next) {
   res.json({data: new data()});
 });
 
+router.post('/checkLoop', function(req, res, next) {
+    snmpReq.send(req.body._address,"public","1.3.6.1.2.1.2.2.1.2.2",(loop)=>{
+      res.json({loopData: loop+""});
+    });
+});
+
 module.exports = router;
